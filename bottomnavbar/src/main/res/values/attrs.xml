@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BottomNavBarIcon">
+        <attr name="navText" format="string"/>
+        <attr name="navIcon" format="integer"/>
+        <attr name="navBackgroundTint" format="integer"/>
+        <attr name="navForegroundTint" format="integer"/>
+        <attr name="selected" format="boolean"/>
+    </declare-styleable>
+</resources>

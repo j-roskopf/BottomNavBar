@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="homeColorTint">#BBDEFB</color>
+    <color name="favoriteColorTint">#F8BBD0</color>
+    <color name="searchColorTint">#52c7b8</color>
+    <color name="profileColorTint">#FFE0B2</color>
+    <color name="personColorTint">#4c8c4a</color>
+
+    <color name="homeText">#1976D2</color>
+    <color name="favoriteText">#C2185B</color>
+    <color name="searchText">#00675b</color>
+    <color name="profileText">#F57C00</color>
+    <color name="personText">#003300</color>
+</resources>
