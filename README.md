@@ -24,7 +24,7 @@ A bottom bar with an expanding effect.
     app/build.gradle
 
 	dependencies {
-	    implementation 'com.github.j-roskopf:BottomNavBar:0.1-alpha'
+	    implementation 'com.github.j-roskopf:BottomNavBar:1.0'
 	}
 
 # Code Example
