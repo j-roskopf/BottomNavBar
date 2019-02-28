@@ -46,9 +46,10 @@ A bottom bar with an expanding effect.
 
 # Attributes
 
-| Attribute             	| Explanation                         	|
-|-----------------------	|--------------------------------------	|
-| app:navIcon           	| Icon to display                      	|
-| app:navText           	| Text to display                      	|
-| app:navBackgroundTint 	| Background color of tab              	|
-| app:navForegroundTint 	| Foreground color of tab (Text color) 	|
+| Attribute             	| Explanation                                   	|
+|-----------------------	|--------------------------------------------------	|
+| app:navIcon           	| Icon to display                                	|
+| app:navText           	| Text to display                                 	|
+| app:navBackgroundTint 	| Background color of tab                         	|
+| app:navForegroundTint 	| Foreground color of tab (Text color)          	|
+| app:selected           	| Whether or not to start with the tab expanded 	|
