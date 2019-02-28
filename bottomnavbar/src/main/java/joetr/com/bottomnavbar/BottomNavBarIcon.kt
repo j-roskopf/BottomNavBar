@@ -1,7 +1,6 @@
 package joetr.com.bottomnavbar
 
 import android.content.Context
-import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +10,9 @@ import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import kotlinx.android.synthetic.main.nav_bar_icon.view.*
 
+/**
+ * Icon to be contained in [BottomNavBar]
+ */
 class BottomNavBarIcon @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
@@ -46,33 +48,39 @@ class BottomNavBarIcon @JvmOverloads constructor(
         }
     }
 
-    private fun textViewId(): Int {
-        return bottomNavBarText.id
-    }
-
-
-    fun navBackground(): Drawable {
-        return bottomNavBarContainer.background
-    }
-
+    /**
+     * Set visibility of only TextView
+     *
+     * @param set - ConstraintSet
+     * @param visibility - Visibility Int
+     */
     fun setVisibilityOfText(set: ConstraintSet, visibility: Int) {
-        set.setVisibility(textViewId(), visibility)
+        set.setVisibility(bottomNavBarText.id, visibility)
     }
 
-    fun container(): ConstraintLayout {
-        return bottomNavBarContainer
+    /**
+     * Set background tint
+     */
+    fun setBackgroundTint() {
+        DrawableCompat.setTint(container().background, foregroundTint)
     }
 
-    fun updateBackground() {
-        DrawableCompat.setTint(navBackground(), foregroundTint)
-    }
-
+    /**
+     * Register click listener.
+     *
+     * This is the mechanism for having a developer get notified of a click event
+     */
     fun registerClickListener(clickListener: View.OnClickListener) {
         this.clickListener = clickListener
     }
 
+    /**
+     * If developer registered a click listener, call it.
+     */
     fun performCustomClick() {
         clickListener?.onClick(container())
     }
+
+    fun container() = bottomNavBarContainer!!
 }
 
