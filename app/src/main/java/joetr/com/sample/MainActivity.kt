@@ -13,8 +13,25 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         homeContainer.registerClickListener(View.OnClickListener {
-            Toast.makeText(it.context, "asdf", Toast.LENGTH_SHORT).show()
+            Toast.makeText(it.context, "Home clicked", Toast.LENGTH_SHORT).show()
         })
 
+        favoriteContainer.registerClickListener(View.OnClickListener {
+            Toast.makeText(it.context, "Likes clicked", Toast.LENGTH_SHORT).show()
+        })
+
+
+        searchContainer.registerClickListener(View.OnClickListener {
+            Toast.makeText(it.context, "Search clicked", Toast.LENGTH_SHORT).show()
+        })
+
+
+        profileContainer.registerClickListener(View.OnClickListener {
+            Toast.makeText(it.context, "Profile clicked", Toast.LENGTH_SHORT).show()
+        })
+
+        faceContainer.registerClickListener(View.OnClickListener {
+            Toast.makeText(it.context, "Face clicked", Toast.LENGTH_SHORT).show()
+        })
     }
 }
