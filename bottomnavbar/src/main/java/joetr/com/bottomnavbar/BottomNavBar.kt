@@ -27,7 +27,7 @@ class BottomNavBar @JvmOverloads constructor(
                     child.container().setOnClickListener {
                         handleClick(child, child.parent as BottomNavBar)
 
-                        //perform custom click if user registered custom click
+                        //perform custom click if developer registered custom click
                         child.performCustomClick()
                     }
                 }
