@@ -6,5 +6,6 @@
         <attr name="navBackgroundTint" format="integer"/>
         <attr name="navForegroundTint" format="integer"/>
         <attr name="selected" format="boolean"/>
+        <attr name="showIconOnRight" format="boolean" />
     </declare-styleable>
 </resources>
