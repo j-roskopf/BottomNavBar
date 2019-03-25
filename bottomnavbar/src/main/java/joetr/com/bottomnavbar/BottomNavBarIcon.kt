@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.LinearLayout
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.content.ContextCompat
@@ -17,7 +18,7 @@ open class BottomNavBarIcon @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
 
-    private var foregroundTint : Int = 0
+    private var foregroundTint: Int = 0
     private var clickListener: View.OnClickListener? = null
 
     init {
@@ -31,6 +32,11 @@ open class BottomNavBarIcon @JvmOverloads constructor(
             val backgroundTint = typedArray.getColor(R.styleable.BottomNavBarIcon_navForegroundTint, 0)
             foregroundTint = typedArray.getColor(R.styleable.BottomNavBarIcon_navBackgroundTint, 0)
             val selected = typedArray.getBoolean(R.styleable.BottomNavBarIcon_selected, false)
+            val showIconOnRight = typedArray.getBoolean(R.styleable.BottomNavBarIcon_showIconOnRight, false)
+
+            if (showIconOnRight) {
+                showIconOnRight(inflatedView.bottomNavBarContainer)
+            }
 
             inflatedView.bottomNavBarText.setTextColor(backgroundTint)
             inflatedView.bottomNavBarIcon.setImageDrawable(icon)
@@ -46,6 +52,25 @@ open class BottomNavBarIcon @JvmOverloads constructor(
 
             typedArray.recycle()
         }
+    }
+
+    private fun showIconOnRight(container: ConstraintLayout) {
+        val constraintSet = ConstraintSet()
+        constraintSet.clone(container)
+
+        // Set layout values for icon
+        constraintSet.connect(R.id.bottomNavBarIcon, ConstraintSet.START, R.id.bottomNavBarText, ConstraintSet.END)
+        constraintSet.connect(R.id.bottomNavBarIcon, ConstraintSet.BOTTOM, ConstraintSet.PARENT_ID, ConstraintSet.BOTTOM)
+        constraintSet.connect(R.id.bottomNavBarIcon, ConstraintSet.END, ConstraintSet.PARENT_ID, ConstraintSet.END)
+        constraintSet.connect(R.id.bottomNavBarIcon, ConstraintSet.TOP, ConstraintSet.PARENT_ID, ConstraintSet.TOP)
+
+        // Set layout values for text
+        constraintSet.connect(R.id.bottomNavBarText, ConstraintSet.END, R.id.bottomNavBarIcon, ConstraintSet.START)
+        constraintSet.connect(R.id.bottomNavBarText, ConstraintSet.START, ConstraintSet.PARENT_ID, ConstraintSet.START)
+        constraintSet.connect(R.id.bottomNavBarText, ConstraintSet.BOTTOM, ConstraintSet.PARENT_ID, ConstraintSet.BOTTOM)
+        constraintSet.connect(R.id.bottomNavBarText, ConstraintSet.TOP, ConstraintSet.PARENT_ID, ConstraintSet.TOP)
+
+        constraintSet.applyTo(container)
     }
 
     /**
