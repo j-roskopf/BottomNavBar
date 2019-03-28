@@ -17,8 +17,8 @@ open class BottomNavBarIcon @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
 
-    private var foregroundTint : Int = 0
-    private var clickListener: View.OnClickListener? = null
+    protected open var foregroundTint : Int = 0
+    protected open var clickListener: View.OnClickListener? = null
 
     init {
         val inflatedView = LayoutInflater.from(context)
