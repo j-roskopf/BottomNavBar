@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.nav_bar_icon.view.*
 /**
  * Icon to be contained in [BottomNavBar]
  */
-class BottomNavBarIcon @JvmOverloads constructor(
+open class BottomNavBarIcon @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
 

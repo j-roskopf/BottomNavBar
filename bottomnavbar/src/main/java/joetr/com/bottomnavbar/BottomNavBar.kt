@@ -15,7 +15,7 @@ import androidx.core.view.children
 /**
  * Container for [BottomNavBarIcon]
  */
-class BottomNavBar @JvmOverloads constructor(
+open class BottomNavBar @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
 
