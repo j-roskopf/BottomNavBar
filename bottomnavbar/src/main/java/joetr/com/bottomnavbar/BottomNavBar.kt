@@ -43,7 +43,7 @@ open class BottomNavBar @JvmOverloads constructor(
      * @param bottomNavBarIcon - Icon that was clicked on
      * @param parent - Parent [BottomNavBar]
      */
-    private fun handleClick(bottomNavBarIcon: BottomNavBarIcon, parent: BottomNavBar) {
+    protected open fun handleClick(bottomNavBarIcon: BottomNavBarIcon, parent: BottomNavBar) {
         val transition = ChangeBounds()
         transition.interpolator = OvershootInterpolator(2.0f)
         transition.duration = 400
@@ -63,7 +63,7 @@ open class BottomNavBar @JvmOverloads constructor(
      * @param set - constraint set
      * @param bottomNavBarIcon - icon
      */
-    private fun selectEnabledIcon(set: ConstraintSet, bottomNavBarIcon: BottomNavBarIcon) {
+    protected open fun selectEnabledIcon(set: ConstraintSet, bottomNavBarIcon: BottomNavBarIcon) {
         set.clone(bottomNavBarIcon.container())
         bottomNavBarIcon.setVisibilityOfText(set, View.VISIBLE)
         bottomNavBarIcon.setBackgroundTint()
@@ -76,7 +76,7 @@ open class BottomNavBar @JvmOverloads constructor(
      * @param parent - [BottomNavBar] container
      * @param set - ConstraintSet
      */
-    private fun disableOtherIcons(
+    protected open fun disableOtherIcons(
         parent: BottomNavBar,
         set: ConstraintSet,
         bottomNavBarIcon: BottomNavBarIcon
