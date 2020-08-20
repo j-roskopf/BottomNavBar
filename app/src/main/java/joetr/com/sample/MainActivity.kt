@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         homeContainer.registerClickListener(View.OnClickListener {
-            Toast.makeText(it.context, "Home clicked", Toast.LENGTH_SHORT).show()
+            Toast.makeText(it.context, "Home clicked!", Toast.LENGTH_SHORT).show()
         })
 
         favoriteContainer.registerClickListener(View.OnClickListener {
