@@ -1,6 +1,13 @@
-name: Notify slack
-  env:
-    SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-  uses: pullreminders/slack-action@master
-  with:
-    args: '{\"channel\":\"CSVUEH22J\",\"text\":\"Hello world\"}'
+on: push
+name: Slack Notification Demo
+jobs:
+    slackNotification:
+      name: Slack Notification Demo
+      runs-on: ubuntu-latest
+      steps:
+      - name: Notify slack
+        env:
+            SLACK_BOT_TOKEN: ${{ secrets.SLACKBOT_TOKEN }}
+        uses: pullreminders/slack-action@master
+        with:
+            args: '{\"channel\":\"CSVUEH22J\",\"text\":\"Hello world\"}'
