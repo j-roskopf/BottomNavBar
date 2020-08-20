@@ -1,0 +1,6 @@
+name: Notify slack
+  env:
+    SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+  uses: pullreminders/slack-action@master
+  with:
+    args: '{\"channel\":\"CSVUEH22J\",\"text\":\"Hello world\"}'
